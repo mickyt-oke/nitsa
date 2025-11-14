@@ -4,7 +4,7 @@
 		<!-- meta tags -->
         <meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>NISTA Online</title>
+        <title>NITSA Online</title>
         <meta name="description" content="Welcome to the official website of the Nigeria Immigration Training School, Ahoada."/>
         <meta name="keywords" content="NITSA, Training School, NIS Ahoada, Immigration"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -685,22 +685,6 @@ it will also eliminate the manual process of registration when the new course co
 					s.async = true; s.defer = true;
 					document.head.appendChild(s);
 				}
-
-			var contact = document.getElementById('section-contact');
-			if(contact && 'IntersectionObserver' in window){
-				var io = new IntersectionObserver(function(entries){
-					entries.forEach(function(entry){
-						if(entry.isIntersecting){ loadMaps(); io.disconnect(); }
-					});
-				}, { rootMargin: '300px' });
-				io.observe(contact);
-			} else {
-				// Fallbacks: load on form focus/interaction or after a short timeout
-				var form = document.getElementById('contact-form');
-				if(form) form.addEventListener('focus', loadMaps, true);
-				window.addEventListener('load', function(){ setTimeout(loadMaps, 3000); });
-			}
-
 			// // ---- Lazy-load background images for elements with [data-bg-src] ----
 			// function lazyLoadBackgrounds(){
 			// 	var selector = '[data-bg-src]';
@@ -746,14 +730,12 @@ it will also eliminate the manual process of registration when the new course co
 		})();
 		</script>
 	 <script src="js/wow.min.js"></script>
-	<script>
-	// Initialize WOW after parsing completes. Because `wow.min.js` is deferred,
-	// it will have executed before DOMContentLoaded, so this handler is safe.
-	// document.addEventListener('DOMContentLoaded', function () {
-	// 	if (typeof WOW !== 'undefined') {
-	// 		new WOW().init();
-	// 	}
-	// });
+	 <script>
+	 wow = new WOW(
+	 {
+	
+		}	) 
+		.init();
 	</script>
 	</body>
 </html>
