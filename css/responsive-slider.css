@@ -63,18 +63,18 @@
 }
 @media (min-width: 481px) and (max-width: 767px) {
   .responsive-slider .slides ul li .slide-body .caption.header h2 {
-    font-size: 25px;
+    font-size: 20px;
   }
   .responsive-slider .slides ul li .slide-body .caption.header h2 i {
-    font-size: 20px;
+    font-size: 15px;
   }
 }
 @media (max-width: 480px) {
   .responsive-slider .slides ul li .slide-body .caption.header h2 {
-    font-size: 16px;
+    font-size: 14px;
   }
   .responsive-slider .slides ul li .slide-body .caption.header h2 i {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 .responsive-slider .slides ul li .slide-body .caption.sub {
@@ -84,7 +84,7 @@
 }
 @media (min-width: 481px) and (max-width: 767px) {
   .responsive-slider .slides ul li .slide-body .caption.sub {
-    font-size: 11px;
+    font-size: 10px;
     bottom: 0px;
     right: -10px;
   }
