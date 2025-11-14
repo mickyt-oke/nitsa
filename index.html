@@ -701,59 +701,59 @@ it will also eliminate the manual process of registration when the new course co
 				window.addEventListener('load', function(){ setTimeout(loadMaps, 3000); });
 			}
 
-			// ---- Lazy-load background images for elements with [data-bg-src] ----
-			function lazyLoadBackgrounds(){
-				var selector = '[data-bg-src]';
-				var nodes = [].slice.call(document.querySelectorAll(selector));
-				if(!nodes.length) return;
+			// // ---- Lazy-load background images for elements with [data-bg-src] ----
+			// function lazyLoadBackgrounds(){
+			// 	var selector = '[data-bg-src]';
+			// 	var nodes = [].slice.call(document.querySelectorAll(selector));
+			// 	if(!nodes.length) return;
 
-				function loadBg(el){
-					var src = el.getAttribute('data-bg-src');
-					if(!src) return;
-					// Preload image then apply as background for smoother paint
-					var img = new Image();
-					img.onload = function(){
-						el.style.backgroundImage = 'url("' + src + '")';
-						el.classList.add('bg-loaded');
-						el.removeAttribute('data-bg-src');
-					};
-					img.src = src;
-				}
+			// 	function loadBg(el){
+			// 		var src = el.getAttribute('data-bg-src');
+			// 		if(!src) return;
+			// 		// Preload image then apply as background for smoother paint
+			// 		var img = new Image();
+			// 		img.onload = function(){
+			// 			el.style.backgroundImage = 'url("' + src + '")';
+			// 			el.classList.add('bg-loaded');
+			// 			el.removeAttribute('data-bg-src');
+			// 		};
+			// 		img.src = src;
+			// 	}
 
-				if('IntersectionObserver' in window){
-					var bgObserver = new IntersectionObserver(function(entries){
-						entries.forEach(function(entry){
-							if(entry.isIntersecting){
-								bgObserver.unobserve(entry.target);
-								loadBg(entry.target);
-							}
-						});
-					}, { rootMargin: '200px' });
+			// 	if('IntersectionObserver' in window){
+			// 		var bgObserver = new IntersectionObserver(function(entries){
+			// 			entries.forEach(function(entry){
+			// 				if(entry.isIntersecting){
+			// 					bgObserver.unobserve(entry.target);
+			// 					loadBg(entry.target);
+			// 				}
+			// 			});
+			// 		}, { rootMargin: '200px' });
 
-					nodes.forEach(function(n){ bgObserver.observe(n); });
-				} else {
-					// Fallback: load all backgrounds after window load
-					window.addEventListener('load', function(){ nodes.forEach(loadBg); });
-				}
-			}
+			// 		nodes.forEach(function(n){ bgObserver.observe(n); });
+			// 	} else {
+			// 		// Fallback: load all backgrounds after window load
+			// 		window.addEventListener('load', function(){ nodes.forEach(loadBg); });
+			// 	}
+			// }
 
-			// Run background lazy loader immediately (it will attach observers)
-			if(document.readyState === 'loading'){
-				document.addEventListener('DOMContentLoaded', lazyLoadBackgrounds);
-			} else {
-				lazyLoadBackgrounds();
-			}
+			// // Run background lazy loader immediately (it will attach observers)
+			// if(document.readyState === 'loading'){
+			// 	document.addEventListener('DOMContentLoaded', lazyLoadBackgrounds);
+			// } else {
+			// 	lazyLoadBackgrounds();
+			// }
 		})();
 		</script>
-	 <script src="js/wow.min.js" defer></script>
+	 <script src="js/wow.min.js"></script>
 	<script>
 	// Initialize WOW after parsing completes. Because `wow.min.js` is deferred,
 	// it will have executed before DOMContentLoaded, so this handler is safe.
-	document.addEventListener('DOMContentLoaded', function () {
-		if (typeof WOW !== 'undefined') {
-			new WOW().init();
-		}
-	});
+	// document.addEventListener('DOMContentLoaded', function () {
+	// 	if (typeof WOW !== 'undefined') {
+	// 		new WOW().init();
+	// 	}
+	// });
 	</script>
 	</body>
 </html>
